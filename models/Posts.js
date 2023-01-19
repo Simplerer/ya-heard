@@ -1,6 +1,5 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
 
 class Posts extends Model {}
 
@@ -30,6 +29,8 @@ Posts.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category'
+        modelName: 'posts'
     }
 )
+
+module.exports = Posts;
