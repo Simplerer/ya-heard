@@ -15,6 +15,14 @@ Category.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        location_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'location',
+                key: 'id'
+            }
+        },
     },
     {
         sequelize,
@@ -24,3 +32,5 @@ Category.init(
         modelName: 'category'
     }
 )
+
+module.exports = Category
