@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
-class Category extends Model {}
+class Location extends Model {}
 
-Category.init(
+Location.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,17 +11,9 @@ Category.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        category_name: {
+        location_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        location_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'location',
-                key: 'id'
-            }
         },
     },
     {
@@ -29,8 +21,8 @@ Category.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category'
+        modelName: 'location'
     }
 )
 
-module.exports = Category
+module.exports = Location
