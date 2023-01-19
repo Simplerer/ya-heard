@@ -1,15 +1,16 @@
 const User = require('./User');
 const Category = require('./Category')
-const Posts = require('./Posts');
+const Recommendation = require('./Recommendation');
+const Location = require('./Location');
 
 
 // ASSOCIATIONS HERE
 
-Post.belongsTo(User, {
+Recommendation.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-User.hasMany(Post, {
+User.hasMany(Recommendation, {
   foreignKey: 'user_id'
 });
 
@@ -19,9 +20,15 @@ Category.belongsToMany(User, {
   }
 })
 
+Location.hasMany(Category, {
+  foreignKey: location_id
+})
+
+Recommendation
 
 module.exports = {
   User,
   Category,
-  Posts
+  Recommendation,
+  Location
 };
