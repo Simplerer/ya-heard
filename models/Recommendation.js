@@ -1,10 +1,9 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
 
-class Posts extends Model {}
+class Recommendation extends Model {}
 
-Posts.init(
+Recommendation.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,16 +11,23 @@ Posts.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        category_name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        comment: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len:[10,500],
+            }
+        },
         user_id: {
-            type: Datatypes.String,
+            type: DataTypes.STRING,
             allowNull: false,
             references: {
                 model: 'user',
-                key: 'id'
+                key: 'id',
             }
         },
     },
@@ -30,6 +36,8 @@ Posts.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category'
+        modelName: 'recommendation'
     }
 )
+
+module.exports = Recommendation
