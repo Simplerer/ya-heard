@@ -8,25 +8,26 @@ const LocationCategory = require('./LocationCategory');
 // ASSOCIATIONS HERE
 
 Recommendation.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id'
 });
 
 User.hasMany(Recommendation, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id'
 });
 
 Category.hasMany(Recommendation, {
-  foreignKey: 'category_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'category_id'
 });
 
-Recommendation.belongsTo(Category, {
-  through: {
-    model: LocationCategory,
-  }
+Location.hasMany(Recommendation, {
+  foreignKey: 'location_id'
 });
+
+// Recommendation.belongsTo(Category, {
+//   through: {
+//     model: LocationCategory,
+//   }
+// });
 
 Location.belongsToMany(Category, {
   through: {
@@ -41,9 +42,9 @@ Category.belongsToMany(Location, {
 })
 
 
-LocationCategory.belongsTo(Location);
-LocationCategory.belongsTo(Category);
-LocationCategory.belongsTo(Recommendation);
+// LocationCategory.belongsTo(Location);
+// LocationCategory.belongsTo(Category);
+// LocationCategory.belongsTo(Recommendation);
 
 
 module.exports = {
