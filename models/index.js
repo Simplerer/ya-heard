@@ -8,15 +8,18 @@ const LocationCategory = require('./LocationCategory');
 // ASSOCIATIONS HERE
 
 Recommendation.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 User.hasMany(Recommendation, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 Category.hasMany(Recommendation, {
-  foreignKey: 'category_id'
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE'
 });
 
 Recommendation.belongsTo(Category, {

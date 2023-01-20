@@ -23,7 +23,7 @@ const init = async () => {
   for (const category of categoryData) {
     await Category.create({
       ...category,
-      location_id: locations[Math.floor(Math.random() * users.length)].id,
+      location_id: locations[Math.floor(Math.random() * locations.length)].id,
     });
   }
   await Category.bulkCreate(categoryData, {
