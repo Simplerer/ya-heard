@@ -33,8 +33,4 @@ Category.init(
     }
 )
 
-<<<<<<< HEAD
-module.export = Category;
-=======
 module.exports = Category
->>>>>>> 5ca5df3a58b0d2cab177b9b0bea715e601993bbb
