@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Cafe hood",
+    "comment": "Great place, relaxed enviroment with tasty food",
+    "user_id": "1"
+
+  },
+  {
+    "title": "Luna Runtun",
+    "comment": "excelent view",
+    "user_id": "1"
+  },
+  {
+    "title": "Delicias Cuencanas",
+    "comment": "Very rustic and cozy, they serve typical ecuadorian food ",
+    "user_id": "1"
+  },
+  {
+    "title": "france",
+    "comment": "france restaurant service review 1",
+    "user_id": "2"
+
+  },
+  {
+    "title": "france",
+    "comment": "france restaurant service review 2",
+    "user_id": "2"
+  },
+  {
+    "title": "france",
+    "comment": "france restaurant service review 3",
+    "user_id": "2"
+  },
+  {
+    "title": "Charlotte",
+    "comment": "Charlotte restaurant service review 1",
+    "user_id": "3"
+  },
+  {
+    "title": "Charlotte",
+    "comment": "Charlotte restaurant service review 2",
+    "user_id": "3"
+  },
+  {
+    "title": "Charlotte",
+    "comment": "Charlotte restaurant service review 3",
+    "user_id": "3"
+  },
+  {
+    "title": "Asheville",
+    "comment": "Asheville restaurant service review 1",
+    "user_id": "4"
+  },
+  {
+    "title": "Asheville",
+    "comment": "Asheville restaurant service review 2",
+    "user_id": "4"
+  },
+  {
+    "title": "Asheville",
+    "comment": "Asheville restaurant service review 3",
+    "user_id": "4"
+  }
+]
+
+

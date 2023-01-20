@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connections');
+const sequelize = require('../config/connection');
 
 class Category extends Model {}
 
@@ -17,11 +17,11 @@ Category.init(
         },
         location_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
+                references: {
                 model: 'location',
                 key: 'id'
             }
+            
         },
     },
     {
