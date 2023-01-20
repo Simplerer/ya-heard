@@ -23,8 +23,7 @@ Recommendation.init(
             }
         },
         user_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
