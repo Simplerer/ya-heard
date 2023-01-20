@@ -1,0 +1,23 @@
+[
+  {
+    "email": "belen@hotmail.com",
+    "username": "beleng",
+    "password": "password1234"
+  },
+  {
+    "email": "mariah@hotmail.com",
+    "username": "mariahmc",
+    "password": "password456"
+  },
+  {
+    "email": "scott@hotmail.com",
+    "username": "scotty",
+    "password": "password789"
+  },
+  {
+    "email": "tiffany@hotmail.com",
+    "username": "tiff",
+    "password": "password147"
+  }
+]
+

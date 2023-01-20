@@ -16,15 +16,15 @@ User.hasMany(Recommendation, {
 
 Category.belongsToMany(User, {
   through: {
-      model: Post,
+    model: Recommendation,
   }
 })
 
 Location.hasMany(Category, {
-  foreignKey: location_id
+  foreignKey: 'location_id'
 })
 
-Recommendation
+
 
 module.exports = {
   User,
