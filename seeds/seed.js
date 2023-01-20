@@ -23,7 +23,7 @@ const init = async () => {
   for (const category of categoryData) {
     await Category.create({
       ...category,
-      location_id: locations[Math.floor(Math.random() * locations.length)].id,
+      // location_id: locations[Math.floor(Math.random() * locations.length)].id,
     });
   }
   await Category.bulkCreate(categoryData, {
@@ -34,12 +34,12 @@ const init = async () => {
     individualHooks: true,
     returning: true,
   });  
-  for (const recommendation of recommendationData) {
-    await Recommendation.create({
-      ...recommendation,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  // for (const recommendation of recommendationData) {
+  //   await Recommendation.create({
+  //     ...recommendation,
+  //     user_id: users[Math.floor(Math.random() * users.length)].id,
+  //   });
+  // }
 
   process.exit(0);
 };

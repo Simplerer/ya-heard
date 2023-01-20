@@ -29,6 +29,20 @@ Recommendation.init(
                 key: 'id',
             }
         },
+        location_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'location',
+                key: 'id',
+            }
+        },
+        catergory_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'category',
+                key: 'id',
+            }
+        }
     },
     {
         sequelize,
