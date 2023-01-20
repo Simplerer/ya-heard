@@ -2,6 +2,7 @@ const User = require('./User');
 const Category = require('./Category')
 const Recommendation = require('./Recommendation');
 const Location = require('./Location');
+const LocationCategory = require('./LocationCategory');
 
 
 // ASSOCIATIONS HERE
@@ -14,21 +15,38 @@ User.hasMany(Recommendation, {
   foreignKey: 'user_id'
 });
 
-Category.belongsToMany(User, {
+Category.hasMany(Recommendation, {
+  foreignKey: 'category_id'
+});
+
+Recommendation.belongsTo(Category, {
   through: {
-    model: Recommendation,
+    model: LocationCategory,
+  }
+});
+
+Location.belongsToMany(Category, {
+  through: {
+    model: LocationCategory
   }
 })
 
-Location.hasMany(Category, {
-  foreignKey: 'location_id'
+Category.belongsToMany(Location, {
+  through: {
+    model: LocationCategory
+  }
 })
 
+
+LocationCategory.belongsTo(Location);
+LocationCategory.belongsTo(Category);
+LocationCategory.belongsTo(Recommendation);
 
 
 module.exports = {
   User,
   Category,
   Recommendation,
-  Location
+  Location,
+  LocationCategory
 };

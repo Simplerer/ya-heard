@@ -12,6 +12,10 @@ const userData = require('./user-seeds.json');
 const init = async () => {
   await sequelize.sync({ force: true });
 
+  const users= await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
   const locations= await Location.bulkCreate(locationData, {
     individualHooks: true,
     returning: true,
@@ -30,10 +34,6 @@ const init = async () => {
     individualHooks: true,
     returning: true,
   });  
-  const users= await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
   for (const recommendation of recommendationData) {
     await Recommendation.create({
       ...recommendation,
