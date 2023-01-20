@@ -14,15 +14,7 @@ Category.init(
         category_name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        location_id: {
-            type: DataTypes.INTEGER,
-                references: {
-                model: 'location',
-                key: 'id'
-            }
-            
-        },
+        }
     },
     {
         sequelize,
