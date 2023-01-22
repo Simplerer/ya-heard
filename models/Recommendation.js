@@ -36,7 +36,7 @@ Recommendation.init(
                 key: 'id',
             }
         },
-        catergory_id: {
+        category_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'category',
