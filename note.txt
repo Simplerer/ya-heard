@@ -3,3 +3,23 @@ IDEAS FOR IMPROVEMENT
 - add either username or email validation check on login
 
 - 
+
+
+
+
+
+
+
+main - pick city
+
+categories
+    - for get route, sending location_id, use in href on city selector to use in title over categories
+
+    ex. click on charlotte, id:1
+        localhost:3001/category/1
+
+recommendations
+
+signup/login
+
+add a location

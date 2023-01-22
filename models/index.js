@@ -41,6 +41,8 @@ Category.belongsToMany(Location, {
   }
 })
 
+Recommendation.belongsTo(Location)
+Recommendation.belongsTo(Category)
 
 // LocationCategory.belongsTo(Location);
 // LocationCategory.belongsTo(Category);
