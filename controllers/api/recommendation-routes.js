@@ -28,7 +28,6 @@ router.get('/', async (req, res) => {
   //get by user
 
   router.get('/:id', async (req, res) => {
-    console.log('PRE --', req.params)
     try{
       const recomData = await Recommendation.findAll({
           where: {
@@ -57,7 +56,6 @@ router.get('/', async (req, res) => {
 // get all by category
 
   router.get('/categories/:id', async (req, res) => {
-    console.log('PRE --', req.params)
     try{
       const recomData = await Recommendation.findAll({
           where: {
@@ -86,7 +84,6 @@ router.get('/', async (req, res) => {
 // get all by location
 
   router.get('/locations/:id', async (req, res) => {
-    console.log('PRE --', req.params)
     try{
       const recomData = await Recommendation.findAll({
           where: {

@@ -8,7 +8,7 @@ IDEAS FOR IMPROVEMENT
 
 
 
-
+Views -------------
 
 main - pick city
 
@@ -23,3 +23,19 @@ recommendations
 signup/login
 
 add a location
+
+------
+
+LOADING RECOMMENDATIONS
+
+- line 29 home-routes.js
+- needs to loop through category before rendering
+   - or search category and loop through locations
+- currently this grabs all recommends for location, need a way to search through and grab specifically location, categories to show
+- maybe we can have 4 identical gets, path as follows
+   /recommendations/A&E/:id
+   /recommendations/F&B/:id
+   /recommendations/Retail/:id
+   /recommendations/services/:id
+
+   -id being location id

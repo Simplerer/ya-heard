@@ -26,14 +26,26 @@ router.get('/category/:city_id', async (req, res) => {
 
 // get all recommendations
 
-router.get('/recommendations/:location-category_id', async (req, res) => {
-  try {
-    const categoryData = await LocationCategory.findByPk(req.params.id, {
-      // include: [ { model: Location }, { model: Recommendation }]
-    })
-
-    res.json(categoryData)
-
+router.get('/recommendations/:id', async (req, res) => {
+  try{
+    const recomData = await Recommendation.findAll({
+        where: {
+            location_id: req.params.id
+        },
+        attributes: ['id', 'title', 'comment'],
+      include: [{ 
+          model: User,
+          attributes: ['username'] }, 
+          { 
+              model: Location,
+              attributes: ['location_name'] },
+          { 
+              model: Category,
+              attributes: ['category_name'] }]
+    
+    });
+    res.json(recomData)
+    console.log(recomData)
   } catch (err) {
     res.status(500).json(err);
   }
