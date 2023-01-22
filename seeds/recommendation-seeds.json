@@ -1,65 +1,89 @@
 [
   {
-    "title": "Cafe hood",
+    "title": "Cafe hood, arts",
     "comment": "Great place, relaxed enviroment with tasty food",
-    "user_id": "1"
+    "user_id": "1",
+    "location_id": "4",
+    "category_id": "1"
 
   },
   {
-    "title": "Luna Runtun",
+    "title": "Luna Runtun, food",
     "comment": "excelent view",
-    "user_id": "1"
+    "user_id": "2",
+    "location_id": "4",
+    "category_id": "2"
   },
   {
-    "title": "Delicias Cuencanas",
-    "comment": "Very rustic and cozy, they serve typical ecuadorian food ",
-    "user_id": "1"
+    "title": "Delicias Cuencanas, Shopping",
+    "comment": "Very rustic and cozy, they serve typical ecuadorian food, shopping",
+    "user_id": "3",
+    "location_id": "4",
+    "category_id": "3"
   },
   {
-    "title": "france",
+    "title": "france, services",
     "comment": "france restaurant service review 1",
-    "user_id": "2"
+    "user_id": "4",
+    "location_id": "3",
+    "category_id": "4"
 
   },
   {
-    "title": "france",
+    "title": "france, arts",
     "comment": "france restaurant service review 2",
-    "user_id": "2"
+    "user_id": "2",
+    "location_id": "3",
+    "category_id": "1"
   },
   {
-    "title": "france",
+    "title": "france, food",
     "comment": "france restaurant service review 3",
-    "user_id": "2"
+    "user_id": "3",
+    "location_id": "3",
+    "category_id": "2"
   },
   {
-    "title": "Charlotte",
+    "title": "Charlotte, Shopping",
     "comment": "Charlotte restaurant service review 1",
-    "user_id": "3"
+    "user_id": "4",
+    "location_id": "1",
+    "category_id": "3"
   },
   {
-    "title": "Charlotte",
+    "title": "Charlotte, services",
     "comment": "Charlotte restaurant service review 2",
-    "user_id": "3"
+    "user_id": "1",
+    "location_id": "1",
+    "category_id": "4"
   },
   {
-    "title": "Charlotte",
+    "title": "Charlotte, arts",
     "comment": "Charlotte restaurant service review 3",
-    "user_id": "3"
+    "user_id": "3",
+    "location_id": "1",
+    "category_id": "1"
   },
   {
-    "title": "Asheville",
+    "title": "Asheville, food",
     "comment": "Asheville restaurant service review 1",
-    "user_id": "4"
+    "user_id": "1",
+    "location_id": "2",
+    "category_id": "2"
   },
   {
-    "title": "Asheville",
+    "title": "Asheville, Shopping",
     "comment": "Asheville restaurant service review 2",
-    "user_id": "4"
+    "user_id": "2",
+    "location_id": "2",
+    "category_id": "3"
   },
   {
-    "title": "Asheville",
+    "title": "Asheville, services",
     "comment": "Asheville restaurant service review 3",
-    "user_id": "4"
+    "user_id": "4",
+    "location_id": "2",
+    "category_id": "4"
   }
 ]
 

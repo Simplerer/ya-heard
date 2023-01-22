@@ -3,3 +3,39 @@ IDEAS FOR IMPROVEMENT
 - add either username or email validation check on login
 
 - 
+
+
+
+
+
+Views -------------
+
+main - pick city
+
+categories
+    - for get route, sending location_id, use in href on city selector to use in title over categories
+
+    ex. click on charlotte, id:1
+        localhost:3001/category/1
+
+recommendations
+
+signup/login
+
+add a location
+
+------
+
+LOADING RECOMMENDATIONS
+
+- line 29 home-routes.js
+- needs to loop through category before rendering
+   - or search category and loop through locations
+- currently this grabs all recommends for location, need a way to search through and grab specifically location, categories to show
+- maybe we can have 4 identical gets, path as follows
+   /recommendations/A&E/:id
+   /recommendations/F&B/:id
+   /recommendations/Retail/:id
+   /recommendations/services/:id
+
+   -id being location id

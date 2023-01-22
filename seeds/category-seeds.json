@@ -1,14 +1,18 @@
 [
   {
+    "id": 1,
     "category_name": "Arts and Entertainment"
   },
   {
+    "id": 2,
     "category_name": "Food and Beverages"
   },
   {
+    "id": 3,
     "category_name": "Shopping and Retail"
   },
   {
+    "id": 4,
     "category_name": "Services"
   }
 ]

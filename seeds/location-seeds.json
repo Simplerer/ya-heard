@@ -1,14 +1,18 @@
 [
   {
+    "id": 1,
     "location_name": "Charlotte"
   },
   {
+    "id": 2,
     "location_name": "Asheville"
   },
   {
+    "id": 3,
     "location_name": "France"
   },
   {
+    "id": 4,
     "location_name": "Ecuador"
   }
 ]

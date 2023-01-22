@@ -1,12 +1,10 @@
 const sequelize = require('../config/connection');
+const { User, Recommendation, Location, Category, LocationCategory } = require('../models')
 const locationData = require('./location-seeds.json');
-const Location = require('../models/Location');
 const categoryData = require('./category-seeds.json');
-const Category = require('../models/Category');
 const recommendationData = require('./recommendation-seeds.json');
-const Recommendation = require('../models/Recommendation');
 const userData = require('./user-seeds.json');
- const User = require('../models/User');
+const locationCategory = require('./locationCategory-seeds.json');
 
 
 const init = async () => {
@@ -17,29 +15,19 @@ const init = async () => {
     returning: true,
   });
   const locations= await Location.bulkCreate(locationData, {
-    individualHooks: true,
-    returning: true,
+    // individualHooks: true,
+    // returning: true,
   });
-  for (const category of categoryData) {
-    await Category.create({
-      ...category,
-      location_id: locations[Math.floor(Math.random() * locations.length)].id,
-    });
-  }
-  await Category.bulkCreate(categoryData, {
-    individualHooks: true,
-    returning: true,
+  const categories = await Category.bulkCreate(categoryData, {
+    // individualHooks: true,
+    // returning: true,
   });
-  await Recommendation.bulkCreate(recommendationData, {
-    individualHooks: true,
-    returning: true,
+  const recommendations = await Recommendation.bulkCreate(recommendationData, {
+    // individualHooks: true,
+    // returning: true,
   });  
-  for (const recommendation of recommendationData) {
-    await Recommendation.create({
-      ...recommendation,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const locationCategories = await LocationCategory.bulkCreate(locationCategory);
+ 
 
   process.exit(0);
 };
