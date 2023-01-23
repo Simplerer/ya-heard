@@ -1,38 +1,54 @@
 <h1>Add Recommendation</h1>
 <div class='menu-container'>
   <div class='card-header col-md-10'>
-  <div class='add-recommendation-container'>
-    <h2>
-      Choose a city :
-   </h2>
-  <div class="dropdown-city">
-  <button onclick="asignCat()" class="cat">Dropdown</button>
-  <div id="dropdown-city" class="dropdown-city">
-    <a>Arts and Entertainment</a>
-    <a>Food and Beverages</a>
-    <a>Shopping and Retail</a>
-    <a>Services</a>
-  </div>
-    <h2>
-      Which are your top suggestions?
-    </h2>
-    <form class='new-recommendation-form'>
-      <label for='title'>
-        Bussiness Name:
-      </label>
-      <br />
-      <textarea id='title' name='title' rows='2' cols='30'>
+    <div class='add-recommendation-container'>
+      <div class="dropdown-city">
+      <button onclick=" " class="city_name">City</button>
+      <div id="dropdown-city" class="dropdown-city">
+        <a>Charlotte</a>
+        <a>Asheville</a>
+        <a>France</a>
+        <a>Ecuador</a>
+      </div>
+      <h2>
+        Which are your top suggestions?
+      </h2>
+        <label for='title'>
+          Bussiness Name:
+        </label>
+        <br />
+        <textarea id='title' name='title' rows='2' cols='30'>
         {{title}}
-      </textarea>
-      <br />
+        </textarea>
+        <br />
         <label for='comment'>
-        Leave a review:
+          Leave a review:
+        </label>
+        <br />
+        <textarea id='comment' name='comment' rows='2' cols='30'>
+        {{comment}}
+        </textarea>
+        <br />
+        <label for='address'>
+
+        Bussines address:
       </label>
       <br />
-      <textarea id='comment' name='comment' rows='2' cols='30'>
-        {{comment}}
-      </textarea>
-      <br />
-  </div>
-</div>
-<script src='/public/js/add-review.js'></script>
+      <textarea id='address' name='address' rows='2' cols='30'>
+        {{address}}
+        </textarea>
+      <div class="dropdown-category">
+        <button onclick="asignCat()" class="cat">Category</button>
+        <div id="dropdown-category" class="dropdown-category">
+          <a>Arts and Entertainment</a>
+          <a>Food and Beverages</a>
+          <a>Shopping and Retail</a>
+          <a>Services</a>
+        </div>
+        <button type='submit' value='Submit'>
+          Submit
+        </button>
+        </form>
+      </div>
+    </div>
+    <script src='/public/js/add-review.js'></script>
