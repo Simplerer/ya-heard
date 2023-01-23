@@ -1,0 +1,50 @@
+<h1>Add Location</h1>
+<div class='menu-container'>
+  <div class='card-header col-md-10'>
+
+  <div class='add-location-container'>
+    <h2>
+      Which city would you like to add?
+    </h2>
+    <form class='new-city-form'>
+      <label for='location_name'>
+        City Name:
+      </label>
+      <br />
+      <textarea id='location_name' name='location_name' rows='2' cols='30'>
+        {{location_name}}
+      </textarea>
+      <br />
+      <form class='new-recommendation-form'>
+      <label for='title'>
+        Bussiness Name:
+      </label>
+      <br />
+      <textarea id='title' name='title' rows='2' cols='30'>
+        {{title}}
+      </textarea>
+      <br />
+        <label for='comment'>
+        Leave a review:
+      </label>
+      <br />
+      <textarea id='comment' name='comment' rows='2' cols='30'>
+        {{comment}}
+      </textarea>
+      <br />
+      <div class="dropdown-city">
+  <button onclick="asignCat()" class="cat">Dropdown</button>
+  <div id="dropdown-city" class="dropdown-city">
+    <a>Arts and Entertainment</a>
+    <a>Food and Beverages</a>
+    <a>Shopping and Retail</a>
+    <a>Services</a>
+  </div>
+
+      <button type='submit' value='Submit'>
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<script src='/public/js/add-city.js'></script>
