@@ -19,7 +19,11 @@ Recommendation.init(
             type: DataTypes.STRING,
             allowNull: true
         },
-        coordinates: {
+        lat: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        long: {
             type: DataTypes.STRING,
             allowNull: true
         },
