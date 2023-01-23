@@ -51,7 +51,7 @@ router.get('/location/asheville', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-asheville', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -67,7 +67,7 @@ router.get('/location/france', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-france', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -83,7 +83,7 @@ router.get('/location/ecuador', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-ecuador', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -116,9 +116,9 @@ router.get('/location/:city/category/:category', async (req, res) => {
          }]
       }]
     });
-    // const location = recData.get({ plain: true });
-    // res.render('recommendations', {location});
-    res.json(recData)
+    const location = recData.get({ plain: true });
+    res.render('recommendations', {location});
+    // res.json(recData)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -153,6 +153,15 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/addreview', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('addreview');
 });
 
 router.get('/add', (req, res) => {
