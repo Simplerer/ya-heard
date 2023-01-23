@@ -35,7 +35,7 @@ router.get('/location/charlotte', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-charlotte', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -111,14 +111,14 @@ router.get('/location/:city/category/:category', async (req, res) => {
               [Op.col]: 'location.id'
             }
           },
-          include: [{ User }]
+          include: [{ model: User }]
           
          }]
       }]
     });
-    const location = recData.get({ plain: true });
-    res.render('recommendations', {location});
-    // res.json(recData)
+    // const location = recData.get({ plain: true });
+    // res.render('recommendations', {location});
+    res.json(recData)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -162,6 +162,6 @@ router.get('/add', (req, res) => {
     return;
   }
   // whatever the name of the view will be
-  res.render('addLocation');
+  res.render('addlocation');
 });
 module.exports = router;
