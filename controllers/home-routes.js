@@ -27,7 +27,15 @@ router.get('/', async (req, res) => {
 
 router.get('/location/charlotte', async (req, res) => {
   try {
-    res.render('char-category')
+    const categoryData = await Category.findAll();
+    const categories = categoryData.map((category) =>
+    category.get({ plain: true }));
+    const imageList = [];
+    imageList.push("categories/arts.png");
+    imageList.push("categories/foodandbev.png");
+    imageList.push("categories/services.png");
+    imageList.push("categories/shopping.png");
+    res.render('category', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -35,7 +43,15 @@ router.get('/location/charlotte', async (req, res) => {
 
 router.get('/location/asheville', async (req, res) => {
   try {
-    res.render('ashe-category')
+    const categoryData = await Category.findAll();
+    const categories = categoryData.map((category) =>
+    category.get({ plain: true }));
+    const imageList = [];
+    imageList.push("categories/arts.png");
+    imageList.push("categories/foodandbev.png");
+    imageList.push("categories/services.png");
+    imageList.push("categories/shopping.png");
+    res.render('category', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -43,7 +59,15 @@ router.get('/location/asheville', async (req, res) => {
 
 router.get('/location/france', async (req, res) => {
   try {
-    res.render('france-category')
+    const categoryData = await Category.findAll();
+    const categories = categoryData.map((category) =>
+    category.get({ plain: true }));
+    const imageList = [];
+    imageList.push("categories/arts.png");
+    imageList.push("categories/foodandbev.png");
+    imageList.push("categories/services.png");
+    imageList.push("categories/shopping.png");
+    res.render('category', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -51,7 +75,15 @@ router.get('/location/france', async (req, res) => {
 
 router.get('/location/ecuador', async (req, res) => {
   try {
-    res.render('ecuador-category')
+    const categoryData = await Category.findAll();
+    const categories = categoryData.map((category) =>
+    category.get({ plain: true }));
+    const imageList = [];
+    imageList.push("categories/arts.png");
+    imageList.push("categories/foodandbev.png");
+    imageList.push("categories/services.png");
+    imageList.push("categories/shopping.png");
+    res.render('category', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -64,7 +96,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
         location_name: {
           [Op.like]: `%${req.params.city}%`
         }
-      },  
+      },
       include: [ {
          model: Category,
          where: {
@@ -79,7 +111,9 @@ router.get('/location/:city/category/:category', async (req, res) => {
             location_id: {
               [Op.col]: 'location.id'
             }
-          }
+          },
+          include: [{ User }]
+          
          }]
       }]
     });
