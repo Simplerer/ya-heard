@@ -1,0 +1,13 @@
+<section class="container">
+  <h1>Choose a location:</h1>
+  <section class="row justify-content-md-center">
+{{#each locations as |location|}}
+<section class="col">
+<a href="/category/{{location.id}}">
+<header>{{location_name}}</header>
+<img src="{{lookup ../imageList @key}}">
+</a>  
+</section>
+{{/each}}
+  </section>
+</section>

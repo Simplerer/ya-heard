@@ -1,25 +1,56 @@
 const router = require('express').Router();
+const express = require('express');
 const { Category, Location, LocationCategory, Recommendation, User } = require('../models/');
 
 // get City Page - main
+router.use(express.static("images"));
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    const locationData = await Location.findAll();
+    const locations = locationData.map((location) =>
+    location.get({ plain: true }));
+    const imageList = [];
+    imageList.push("locations/charlotte.png");
+    imageList.push("locations/asheville.png");
+    imageList.push("locations/ecuador.png");
+    imageList.push("locations/france.png");
+    res.render('location', { locations, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+
 // get categories 
 
-router.get('/category/:city_id', async (req, res) => {
+router.get('/category/:loc_id', async (req, res) => {
   try {
     const cityData = await Location.findByPk(req.params.id);
     const city = cityData.get({ plain: true })
     // city is available to pass along location_id
     res.render('category'), { city };
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/charlotte/:id', async (req, res) => {
+  try{
+    const recData = await Category.findByPk(1, {
+      include: [
+        {
+          model: Recommendation,
+          where: Recommendation.category_id = req.params.id,
+          attributes: ['id', 'title', 'comment', 'user_id', 'location_id', 'category_id'],
+        },
+      ],
+    });
+    const recommendations = recData.map((rec) =>
+    rec.get({ plain: true }));
+    res.render('recommendations', {recommendations});
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -32,20 +63,13 @@ router.get('/recommendations/:id', async (req, res) => {
         where: {
             location_id: req.params.id
         },
-        attributes: ['id', 'title', 'comment'],
       include: [{ 
           model: User,
-          attributes: ['username'] }, 
-          { 
-              model: Location,
-              attributes: ['location_name'] },
-          { 
-              model: Category,
-              attributes: ['category_name'] }]
-    
+          attributes: ['username'] }]
     });
-    res.json(recomData)
-    console.log(recomData)
+     const recommendations = recomData.map((recommendation) =>
+     recommendation.get({ plain: true }));
+    res.render('recommendation', {recommendations})
   } catch (err) {
     res.status(500).json(err);
   }
