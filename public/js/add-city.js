@@ -16,6 +16,12 @@ async function newFormHandler(event) {
       alert('Failed to add city');
     }
   }
+
+  async function asignCat(cat) {
+
+
+  };
   
   document.querySelector('.new-city-form').addEventListener('submit', newFormHandler);
   
+  document.querySelector('.cat').addEventListener('onclick', asignCat);

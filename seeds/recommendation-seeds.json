@@ -1,85 +1,120 @@
 [
-  {
-    "title": "Cafe hood, arts",
+  { "id": 1,
+    "title": "Cafe Hood",
+    "address": "Montalvo &, Baños de Agua Santa 180250, Ecuador",
+    "coordinates": "-1.3986545464687306, -78.41923998465961",
+    "website": "http://cafehoodecuador.com/",
     "comment": "Great place, relaxed enviroment with tasty food",
     "user_id": "1",
     "location_id": "4",
     "category_id": "1"
-
   },
-  {
-    "title": "Luna Runtun, food",
-    "comment": "excelent view",
+  { "id": 2,
+    "title": "Luna Runtun",
+    "address": "",
+    "coordinates": "",
+    "website": "",
+    "comment": "This restaurant has great food and an excelent view",
     "user_id": "2",
     "location_id": "4",
     "category_id": "2"
   },
-  {
+  { "id": "3",
     "title": "Delicias Cuencanas, Shopping",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Very rustic and cozy, they serve typical ecuadorian food, shopping",
     "user_id": "3",
     "location_id": "4",
     "category_id": "3"
   },
-  {
+  { "id": "4",
     "title": "france, services",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "france restaurant service review 1",
     "user_id": "4",
     "location_id": "3",
     "category_id": "4"
 
   },
-  {
+  { "id": "5",
     "title": "france, arts",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "france restaurant service review 2",
     "user_id": "2",
     "location_id": "3",
     "category_id": "1"
   },
-  {
+  { "id": "6",
     "title": "france, food",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "france restaurant service review 3",
     "user_id": "3",
     "location_id": "3",
     "category_id": "2"
   },
-  {
+  { "id": "7",
     "title": "Charlotte, Shopping",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Charlotte restaurant service review 1",
     "user_id": "4",
     "location_id": "1",
     "category_id": "2"
   },
-  {
+  { "id": "8",
     "title": "Charlotte, services",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Charlotte restaurant service review 2",
     "user_id": "1",
     "location_id": "1",
     "category_id": "2"
   },
-  {
+  { "id": "9",
     "title": "Charlotte, arts",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Charlotte restaurant service review 3",
     "user_id": "3",
     "location_id": "1",
     "category_id": "2"
   },
-  {
+  { "id": "10",
     "title": "Asheville, food",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Asheville restaurant service review 1",
     "user_id": "1",
     "location_id": "2",
     "category_id": "2"
   },
-  {
+  { "id": "11",
     "title": "Asheville, Shopping",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Asheville restaurant service review 2",
     "user_id": "2",
     "location_id": "2",
     "category_id": "3"
   },
-  {
+  { "id": "12",
     "title": "Asheville, services",
+    "address": "",
+    "coordinates": "",
+    "website": "",
     "comment": "Asheville restaurant service review 3",
     "user_id": "4",
     "location_id": "2",
