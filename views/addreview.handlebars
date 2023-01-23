@@ -1,54 +1,60 @@
 <h1>Add Recommendation</h1>
-<div class='menu-container'>
-  <div class='card-header col-md-10'>
-    <div class='add-recommendation-container'>
-      <div class="dropdown-city">
-      <button onclick=" " class="city_name">City</button>
-      <div id="dropdown-city" class="dropdown-city">
-        <a>Charlotte</a>
-        <a>Asheville</a>
-        <a>France</a>
-        <a>Ecuador</a>
-      </div>
+<div class='new-recommendation-container'>
+  <form class='new-recommendation-form'>
+    <div class="add-location-container">
+      <label for="location">Choose a city:</label>
+      <select name="location_id" id="location_id">
+        <option value="1">Charlotte</option>
+        <option value="2">Asheville</option>
+        <option value="3">France</option>
+        <option value="4">Ecuador</option>
+      </select>
       <h2>
         Which are your top suggestions?
       </h2>
-        <label for='title'>
-          Bussiness Name:
-        </label>
-        <br />
-        <textarea id='title' name='title' rows='2' cols='30'>
+      <label for='title'>
+        Bussiness Name:
+      </label>
+      <br />
+      <textarea id='title' name='title' rows='2' cols='30'>
         {{title}}
         </textarea>
-        <br />
-        <label for='comment'>
-          Leave a review:
-        </label>
-        <br />
-        <textarea id='comment' name='comment' rows='2' cols='30'>
+      <br />
+      <label for='comment'>
+        Leave a review:
+      </label>
+      <br />
+      <textarea id='comment' name='comment' rows='2' cols='30'>
         {{comment}}
         </textarea>
-        <br />
-        <label for='address'>
-
+      <br />
+      <label for='address'>
         Bussines address:
       </label>
       <br />
       <textarea id='address' name='address' rows='2' cols='30'>
         {{address}}
-        </textarea>
-      <div class="dropdown-category">
-        <button onclick="asignCat()" class="cat">Category</button>
-        <div id="dropdown-category" class="dropdown-category">
-          <a>Arts and Entertainment</a>
-          <a>Food and Beverages</a>
-          <a>Shopping and Retail</a>
-          <a>Services</a>
-        </div>
-        <button type='submit' value='Submit'>
-          Submit
-        </button>
-        </form>
+    </textarea>
+      <label for='website'>
+        Bussines website:
+      </label>
+      <br />
+      <textarea id='website' name='website' rows='2' cols='30'>
+        {{website}}
+    </textarea>
+      <div class="category">
+        <label for="category">Choose a category:</label>
+        <select name="category_id" id="category_id">
+          <option value="1">Arts and Entertainment</option>
+          <option value="2">Food and Beverages</option>
+          <option value="3">Shopping and Retail</option>
+          <option value="4">Services</option>
+        </select>
       </div>
-    </div>
-    <script src='/public/js/add-review.js'></script>
+      <button type='submit' value='Submit'>
+        Submit
+      </button>
+  </form>
+</div>
+
+<script src='/public/js/add-review.js'></script>
