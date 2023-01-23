@@ -35,7 +35,7 @@ router.get('/location/charlotte', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-charlotte', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -51,7 +51,7 @@ router.get('/location/asheville', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-asheville', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -67,7 +67,7 @@ router.get('/location/france', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-france', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -83,7 +83,7 @@ router.get('/location/ecuador', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category', { categories, imageList });
+    res.render('category-ecuador', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -112,7 +112,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
               [Op.col]: 'location.id'
             }
           },
-          include: [{ User }]
+          include: [{ model: User }]
           
          }]
       }]
@@ -156,6 +156,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/addreview', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('addreview');
+});
+
 router.get('/add', (req, res) => {
   // if not logged in should redirect to login, cant request add without signing in
   if (!req.session.loggedIn) {
@@ -163,6 +172,6 @@ router.get('/add', (req, res) => {
     return;
   }
   // whatever the name of the view will be
-  res.render('addLocation');
+  res.render('addlocation');
 });
 module.exports = router;

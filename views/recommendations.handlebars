@@ -10,7 +10,7 @@
 {{#if coordinates}}
 <div id="map"></div>
 <script>
-  let map = L.map('map').setView([{{lattitude}}, {{longitude}}], 13);
+  let map = L.map('map').setView([{{lat}}, {{long}}], 13);
   let marker = L.marker([{{coordinates}}]).addTo(map);
 </script>
 {{/if}}    
