@@ -1,0 +1,14 @@
+<section class="container">
+  <h1>Recommendations for category: {{category.id}}</h1>
+  <section class="row justify-content-md-center">
+{{#each recommendations as |recommendation|}}
+<section class="card">
+  <header>{{recommendation.title}}</header>
+  <div class="card-body">
+  <p>{{recommendation.comment}}</p>
+  <p>Recommended by: {{recommendation.user_id}}</p>  
+  </div>
+</section>
+{{/each}}
+</section>
+</section>
