@@ -1,12 +1,19 @@
 <section class="container">
   <h1>Recommendations for category: {{category.id}}</h1>
   <section class="row justify-content-md-center">
-{{#each recommendations as |recommendation|}}
+{{#each location.categories.[0].recommendations }}
 <section class="card">
-  <header>{{recommendation.title}}</header>
+  <header>{{title}}</header>
   <div class="card-body">
-  <p>{{recommendation.comment}}</p>
-  <p>Recommended by: {{recommendation.user_id}}</p>  
+  <p>{{comment}}</p>
+  <p>Recommended by: {{user.username}}</p>
+{{#if coordinates}}
+<div id="map"></div>
+<script>
+  let map = L.map('map').setView([{{lattitude}}, {{longitude}}], 13);
+  let marker = L.marker([{{coordinates}}]).addTo(map);
+</script>
+{{/if}}    
   </div>
 </section>
 {{/each}}
