@@ -15,6 +15,18 @@ Recommendation.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        address: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        coordinates: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        website: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         comment: {
             type: DataTypes.STRING,
             allowNull: false,
