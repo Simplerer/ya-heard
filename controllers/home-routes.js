@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const express = require('express');
+const { Op } = require('sequelize');
 const { Category, Location, LocationCategory, Recommendation, User } = require('../models/');
 
 // get City Page - main
@@ -22,58 +23,94 @@ router.get('/', async (req, res) => {
 });
 
 
-// get categories 
+// get categories by city
 
-router.get('/category/:loc_id', async (req, res) => {
+router.get('/location/charlotte', async (req, res) => {
   try {
-    const cityData = await Location.findByPk(req.params.id);
-    const city = cityData.get({ plain: true })
-    // city is available to pass along location_id
-    res.render('category'), { city };
+    res.render('char-category')
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/charlotte/:id', async (req, res) => {
+router.get('/location/asheville', async (req, res) => {
+  try {
+    res.render('ashe-category')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/location/france', async (req, res) => {
+  try {
+    res.render('france-category')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/location/ecuador', async (req, res) => {
+  try {
+    res.render('ecuador-category')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/location/:city/category/:category', async (req, res) => {
   try{
-    const recData = await Category.findByPk(1, {
-      include: [
-        {
+    const recData = await Location.findOne({
+      where: {
+        location_name: {
+          [Op.like]: `%${req.params.city}%`
+        }
+      },  
+      include: [ {
+         model: Category,
+         where: {
+           category_name: {
+            [Op.like]: `%${req.params.category}%`
+          },
+         },
+        include: [{ 
           model: Recommendation,
-          where: Recommendation.category_id = req.params.id,
-          attributes: ['id', 'title', 'comment', 'user_id', 'location_id', 'category_id'],
-        },
-      ],
+          where: {
+            location_id: {
+              [Op.col]: 'location.id'
+            }
+          }
+         }]
+      }]
     });
     const recommendations = recData.map((rec) =>
     rec.get({ plain: true }));
     res.render('recommendations', {recommendations});
+    // res.json(recData)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// get all recommendations
+// get all recommendations for a location
 
-router.get('/recommendations/:id', async (req, res) => {
-  try{
-    const recomData = await Recommendation.findAll({
-        where: {
-            location_id: req.params.id
-        },
-      include: [{ 
-          model: User,
-          attributes: ['username'] }]
-    });
-     const recommendations = recomData.map((recommendation) =>
-     recommendation.get({ plain: true }));
-    res.render('recommendation', {recommendations})
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
+// router.get('/recommendations/:id', async (req, res) => {
+//   try{
+//     const recomData = await Recommendation.findAll({
+//         where: {
+//             location_id: req.params.id
+//         },
+//       include: [{ 
+//           model: User,
+//           attributes: ['username'] }]
+//     });
+//      const recommendations = recomData.map((recommendation) =>
+//      recommendation.get({ plain: true }));
+//     res.render('recommendation', {recommendations})
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// })
 
  // This is a login and signup page
 router.get('/login', (req, res) => {
