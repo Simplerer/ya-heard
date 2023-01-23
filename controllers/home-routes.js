@@ -74,6 +74,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
          },
         include: [{ 
           model: Recommendation,
+          include: [User],
           where: {
             location_id: {
               [Op.col]: 'location.id'
@@ -82,9 +83,8 @@ router.get('/location/:city/category/:category', async (req, res) => {
          }]
       }]
     });
-    const recommendations = recData.map((rec) =>
-    rec.get({ plain: true }));
-    res.render('recommendations', {recommendations});
+    const location = recData.get({ plain: true });
+    res.render('recommendations', {location});
     // res.json(recData)
   } catch (err) {
     console.log(err);
