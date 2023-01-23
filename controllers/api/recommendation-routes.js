@@ -11,12 +11,13 @@ router.get('/', async (req, res) => {
         include: [{ 
             model: User,
             attributes: ['username'] }, 
-            { 
-                model: Location,
-                attributes: ['location_name'] },
-            { 
-                model: Category,
-                attributes: ['category_name'] }]
+            // { 
+            //     model: Location,
+            //     attributes: ['location_name'] },
+            // { 
+            //     model: Category,
+            //     attributes: ['category_name'] }
+              ]
       });
       res.json(recomData)
     } catch (err) {
