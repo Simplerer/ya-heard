@@ -1,19 +1,23 @@
 [
   {
     "id": 1,
-    "category_name": "Arts and Entertainment"
+    "category_name": "Arts and Entertainment",
+    "category_key" : "arts"
   },
   {
     "id": 2,
-    "category_name": "Food and Beverages"
+    "category_name": "Food and Beverage",
+    "category_key": "food"
   },
   {
     "id": 3,
-    "category_name": "Shopping and Retail"
+    "category_name": "Shopping and Retail",
+    "category_key" :  "shopping"
   },
   {
     "id": 4,
-    "category_name": "Services"
+    "category_name": "Service",
+    "category_key": "services"
   }
 ]
 

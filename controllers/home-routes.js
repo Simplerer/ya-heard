@@ -4,6 +4,7 @@ const { Op } = require('sequelize');
 const { Category, Location, LocationCategory, Recommendation, User } = require('../models/');
 
 router.use(express.static("images"));
+router.use(express.static("images/categories"));
 
 // get City Page - main
 
@@ -32,10 +33,10 @@ router.get('/location/Charlotte', async (req, res) => {
     const categories = categoryData.map((category) =>
     category.get({ plain: true }));
     const imageList = [];
-    imageList.push("categories/arts.png");
-    imageList.push("categories/foodandbev.png");
-    imageList.push("categories/services.png");
-    imageList.push("categories/shopping.png");
+    imageList.push("arts.png");
+    imageList.push("foodandbev.png");
+    imageList.push("services.png");
+    imageList.push("shopping.png");
     res.render('category-Charlotte', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
@@ -48,43 +49,44 @@ router.get('/location/Asheville', async (req, res) => {
     const categories = categoryData.map((category) =>
     category.get({ plain: true }));
     const imageList = [];
-    imageList.push("categories/arts.png");
-    imageList.push("categories/foodandbev.png");
-    imageList.push("categories/services.png");
-    imageList.push("categories/shopping.png");
+    imageList.push("locations/arts.png");
+    imageList.push("locations/foodandbev.png");
+    imageList.push("locations/services.png");
+    imageList.push("locations/shopping.png");
     res.render('category-Asheville', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/location/France', async (req, res) => {
+
+router.get('/location/Paris', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
     category.get({ plain: true }));
     const imageList = [];
-    imageList.push("categories/arts.png");
-    imageList.push("categories/foodandbev.png");
-    imageList.push("categories/services.png");
-    imageList.push("categories/shopping.png");
-    res.render('category-France', { categories, imageList });
+    imageList.push("locations/arts.png");
+    imageList.push("locations/foodandbev.png");
+    imageList.push("locations/services.png");
+    imageList.push("locations/shopping.png");
+    res.render('category-Paris', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/location/Ecuador', async (req, res) => {
+router.get('/location/Banos', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
     category.get({ plain: true }));
     const imageList = [];
-    imageList.push("categories/arts.png");
-    imageList.push("categories/foodandbev.png");
-    imageList.push("categories/services.png");
-    imageList.push("categories/shopping.png");
-    res.render('category-ecuador', { categories, imageList });
+    imageList.push("locations/arts.png");
+    imageList.push("locations/foodandbev.png");
+    imageList.push("locations/services.png");
+    imageList.push("locations/shopping.png");
+    res.render('category-Banos', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -103,7 +105,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
       include: [ {
          model: Category,
          where: {
-           category_name: {
+           category_key: {
             [Op.like]: `%${req.params.category}%`
           },
          },

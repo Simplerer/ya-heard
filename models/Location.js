@@ -15,6 +15,10 @@ Location.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        full_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,

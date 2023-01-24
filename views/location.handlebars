@@ -1,13 +1,22 @@
-<section class="container">
-  <h1>Choose a location:</h1>
-  <section class="row justify-content-md-center">
+<section class="container-fluid content">
+  
+  <section class="row justify-content-md-center locations">
+  <h1 id="prompt">Check out small business recommendations in:</h1>
+  
 {{#each locations as |location|}}
-<section class="col">
-<a href="/location/{{location_name}}">
-<header>{{location_name}}</header>
-<img src="{{lookup ../imageList @key}}">
+<div class="col pt-4 text-center">
+<a id="citylink" href="/location/{{location_name}}">
+<header id="cityname">{{full_name}}</header>
+<img id="cityimg" src="{{lookup ../imageList @key}}">
 </a>  
-</section>
+</div>
 {{/each}}
   </section>
+  <div class="row justify-content-md-center messagebtn">
+    <div class="col col-4 text-center align-self-center">
+    <article>
+      Dont See your city? Fill out our <a id="formlink" href="/add">request form</a> to have it added!
+    </article>
+  </div>
+  </div>
 </section>
