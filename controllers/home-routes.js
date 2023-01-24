@@ -3,8 +3,7 @@ const express = require('express');
 const { Op } = require('sequelize');
 const { Category, Location, LocationCategory, Recommendation, User } = require('../models/');
 
-router.use(express.static("images"));
-router.use(express.static("images/categories"));
+
 
 // get City Page - main
 
@@ -27,70 +26,70 @@ router.get('/', async (req, res) => {
 
 // get categories by city
 
-router.get('/location/Charlotte', async (req, res) => {
-  try {
-    const categoryData = await Category.findAll();
-    const categories = categoryData.map((category) =>
-    category.get({ plain: true }));
-    const imageList = [];
-    imageList.push("arts.png");
-    imageList.push("foodandbev.png");
-    imageList.push("services.png");
-    imageList.push("shopping.png");
-    res.render('category-Charlotte', { categories, imageList });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/location/Charlotte', async (req, res) => {
+//   try {
+//     const categoryData = await Category.findAll();
+//     const categories = categoryData.map((category) =>
+//     category.get({ plain: true }));
+//     const imageList = [];
+//     imageList.push("arts.png");
+//     imageList.push("foodandbev.png");
+//     imageList.push("services.png");
+//     imageList.push("shopping.png");
+//     res.render('category-Charlotte', { categories, imageList });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.get('/location/Asheville', async (req, res) => {
-  try {
-    const categoryData = await Category.findAll();
-    const categories = categoryData.map((category) =>
-    category.get({ plain: true }));
-    const imageList = [];
-    imageList.push("locations/arts.png");
-    imageList.push("locations/foodandbev.png");
-    imageList.push("locations/services.png");
-    imageList.push("locations/shopping.png");
-    res.render('category-Asheville', { categories, imageList });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/location/Asheville', async (req, res) => {
+//   try {
+//     const categoryData = await Category.findAll();
+//     const categories = categoryData.map((category) =>
+//     category.get({ plain: true }));
+//     const imageList = [];
+//     imageList.push("locations/arts.png");
+//     imageList.push("locations/foodandbev.png");
+//     imageList.push("locations/services.png");
+//     imageList.push("locations/shopping.png");
+//     res.render('category-Asheville', { categories, imageList });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
-router.get('/location/Paris', async (req, res) => {
-  try {
-    const categoryData = await Category.findAll();
-    const categories = categoryData.map((category) =>
-    category.get({ plain: true }));
-    const imageList = [];
-    imageList.push("locations/arts.png");
-    imageList.push("locations/foodandbev.png");
-    imageList.push("locations/services.png");
-    imageList.push("locations/shopping.png");
-    res.render('category-Paris', { categories, imageList });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/location/Paris', async (req, res) => {
+//   try {
+//     const categoryData = await Category.findAll();
+//     const categories = categoryData.map((category) =>
+//     category.get({ plain: true }));
+//     const imageList = [];
+//     imageList.push("locations/arts.png");
+//     imageList.push("locations/foodandbev.png");
+//     imageList.push("locations/services.png");
+//     imageList.push("locations/shopping.png");
+//     res.render('category-Paris', { categories, imageList });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.get('/location/Banos', async (req, res) => {
-  try {
-    const categoryData = await Category.findAll();
-    const categories = categoryData.map((category) =>
-    category.get({ plain: true }));
-    const imageList = [];
-    imageList.push("locations/arts.png");
-    imageList.push("locations/foodandbev.png");
-    imageList.push("locations/services.png");
-    imageList.push("locations/shopping.png");
-    res.render('category-Banos', { categories, imageList });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/location/Banos', async (req, res) => {
+//   try {
+//     const categoryData = await Category.findAll();
+//     const categories = categoryData.map((category) =>
+//     category.get({ plain: true }));
+//     const imageList = [];
+//     imageList.push("locations/arts.png");
+//     imageList.push("locations/foodandbev.png");
+//     imageList.push("locations/services.png");
+//     imageList.push("locations/shopping.png");
+//     res.render('category-Banos', { categories, imageList });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Recomenndation for a specific category/location combo
 
@@ -180,7 +179,6 @@ router.get('/add', (req, res) => {
   }
   res.render('addlocation');
 });
-
 //temporary route to try add review until we have the real recomendation route
 router.get('/recommendation', (req, res) => {
 
