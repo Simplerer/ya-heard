@@ -2,19 +2,27 @@ async function newFormHandler(event) {
   event.preventDefault();
   const title = document.querySelector('#title').value;
   const comment = document.querySelector('#comment').value;
+  const category_id = document.querySelector('#category_id').value;
+  const address = document.querySelector('#address').value;
+  const website = document.querySelector('#website').value;
+  const location_id = document.querySelector('#location_id').value;
 
-  // dropdown menu for category incomplete
-  const cat = document.querySelector('#cat:checked') ? true : false;
+
   // Send fetch request to add a new review
-  const response = await fetch(`/recommendation`, {
+
+  const response = await fetch(`/api/recommendations`, {
     method: 'POST',
     body: JSON.stringify({
       title,
       comment,
-
-      cat,
-
+      website,
+      address,
+      category_id,
+      location_id,
     }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
 
   });
   //if the recommendation is added
@@ -26,4 +34,3 @@ async function newFormHandler(event) {
 }
 
 document.querySelector('.new-recommendation-form').addEventListener('submit', newFormHandler);
- 
