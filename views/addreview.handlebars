@@ -1,9 +1,11 @@
-<h1>Add Recommendation</h1>
+<div class="container recform">
+<h1 id="addtxt">Submit A Recommendation:</h1>
 <div class='new-recommendation-container'>
   <form class='new-recommendation-form'>
     <div class="add-location-container">
       <label for="location">Choose a city:</label>
       <select name="location_id" id="location_id">
+        <option value="" disabled selected>Select City</option>
         <option value="1">Charlotte</option>
         <option value="2">Asheville</option>
         <option value="3">France</option>
@@ -13,6 +15,7 @@
       <div class="category">
         <label for="category">Choose a category:</label>
         <select name="category_id" id="category_id">
+          <option value="" disabled selected>Select Category</option>
           <option value="1">Arts and Entertainment</option>
           <option value="2">Food and Beverages</option>
           <option value="3">Shopping and Retail</option>
@@ -52,10 +55,11 @@
         {{website}}
     </textarea>
       <br />
-      <button type='submit' value='Submit'>
+      <button id="submit-btn" type='submit' value='Submit'>
         Submit
       </button>
   </form>
+</div>
 </div>
 
 <script src='/js/add-review.js'></script>

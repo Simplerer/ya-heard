@@ -1,21 +1,31 @@
-<section class="container">
-  <h1>Recommendations for category: {{category.id}}</h1>
-  <section class="row justify-content-md-center">
+<section class="container-fluid content">
+  <section class="row justify-content-md-center recs">
+  <h1 id="prompt">{{location.categories.[0].category_name}} Recommendations in:</h1>
+  <h2 id="locname">{{location.full_name}}</h2>
 {{#each location.categories.[0].recommendations }}
-<section class="card">
-  <header>{{title}}</header>
+<div class="col pt-4">
+<section class="card rec">
+  <header id="rectitle">{{title}}</header>
   <div class="card-body">
+  {{#if address}}
+  <p><span class="first" style="color: #584f3e;">address:</span> {{address}}</p>
+  {{/if}}
   <p>{{comment}}</p>
-  <p>Recommended by: {{user.username}}</p>
-{{#if coordinates}}
+  <p><span class="first" style="color: #584f3e;">Recommended by:</span> {{user.username}}</p>
+{{#if lat}}
 <div id="map"></div>
 <script>
-  let map = L.map('map').setView([{{lat}}, {{long}}], 13);
-  let marker = L.marker([{{coordinates}}]).addTo(map);
+  let map = L.map("map").setView([{{lat}}, {{long}}], 10);
+  let marker = L.marker([{{lat}}, {{long}}]).addTo(map);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 </script>
 {{/if}}    
   </div>
 </section>
+</div>
 {{/each}}
 </section>
 </section>
