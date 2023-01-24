@@ -156,8 +156,8 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/addreview', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
     return;
   }
 
@@ -173,4 +173,10 @@ router.get('/add', (req, res) => {
   // whatever the name of the view will be
   res.render('addlocation');
 });
+//temporary route to try add review until we have the real recomendation route
+router.get('/recommendation', (req, res) => {
+
+  res.render('recommendations');
+});
+
 module.exports = router;

@@ -9,15 +9,23 @@
         <option value="3">France</option>
         <option value="4">Ecuador</option>
       </select>
-      <h2>
-        Which are your top suggestions?
-      </h2>
+      <br />
+      <div class="category">
+        <label for="category">Choose a category:</label>
+        <select name="category_id" id="category_id">
+          <option value="1">Arts and Entertainment</option>
+          <option value="2">Food and Beverages</option>
+          <option value="3">Shopping and Retail</option>
+          <option value="4">Services</option>
+        </select>
+      </div>
+      <br />
       <label for='title'>
-        Bussiness Name:
+        Business Name:
       </label>
       <br />
       <textarea id='title' name='title' rows='2' cols='30'>
-        {{title}}
+      {{title}}
         </textarea>
       <br />
       <label for='comment'>
@@ -29,32 +37,25 @@
         </textarea>
       <br />
       <label for='address'>
-        Bussines address:
+        Business address:
       </label>
       <br />
       <textarea id='address' name='address' rows='2' cols='30'>
         {{address}}
     </textarea>
+      <br />
       <label for='website'>
-        Bussines website:
+        Business website:
       </label>
       <br />
       <textarea id='website' name='website' rows='2' cols='30'>
         {{website}}
     </textarea>
-      <div class="category">
-        <label for="category">Choose a category:</label>
-        <select name="category_id" id="category_id">
-          <option value="1">Arts and Entertainment</option>
-          <option value="2">Food and Beverages</option>
-          <option value="3">Shopping and Retail</option>
-          <option value="4">Services</option>
-        </select>
-      </div>
+      <br />
       <button type='submit' value='Submit'>
         Submit
       </button>
   </form>
 </div>
 
-<script src='/public/js/add-review.js'></script>
+<script src='/js/add-review.js'></script>

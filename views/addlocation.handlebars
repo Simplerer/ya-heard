@@ -1,18 +1,24 @@
 <h1>Add Location</h1>
 <div class='menu-container'>
-  <div class='card-header col-md-10'>
-    <form class='new-city-form'></form>
+  <form class='new-city-form'>
     <div class='add-location-container'>
-      <h2>
-        Which city would you like to add?
-      </h2>
-        <br />
+      <label for="location">Add a city:</label>
+      <br />
       <textarea id='location_name' name='location_name' rows='2' cols='30'>
-        {{location_name}}
-        </textarea>
+      </textarea>
+      <br />
+      <div class="category">
+        <label for="category">Choose a category:</label>
+        <select name="category_id" id="category_id">
+          <option value="1">Arts and Entertainment</option>
+          <option value="2">Food and Beverages</option>
+          <option value="3">Shopping and Retail</option>
+          <option value="4">Services</option>
+        </select>
+      </div>
       <br />
       <label for='title'>
-        Bussiness Name:
+        Business Name:
       </label>
       <br />
       <textarea id='title' name='title' rows='2' cols='30'>
@@ -28,25 +34,25 @@
         </textarea>
       <br />
       <label for='address'>
-
-        Bussines address:
+        Business address:
       </label>
       <br />
       <textarea id='address' name='address' rows='2' cols='30'>
         {{address}}
         </textarea>
-      <div class="dropdown-category">
-        <button onclick="asignCat()" class="cat">Category</button>
-        <div id="dropdown-category" class="dropdown-category">
-          <a>Arts and Entertainment</a>
-          <a>Food and Beverages</a>
-          <a>Shopping and Retail</a>
-          <a>Services</a>
-        </div>
-        <button type='submit' value='Submit'>
-          Submit
-        </button>
-        </form>
-      </div>
-    </div>
-    <script src='/public/js/add-city.js'></script>
+      <br />
+      <label for='address'>
+        Business Website:
+      </label>
+      <br />
+      <textarea id='website' name='website' rows='2' cols='30'>
+        {{website}}
+        </textarea>
+      <br />
+      <button type='submit' value='Submit'>
+        Submit
+      </button>
+  </form>
+</div>
+
+<script src='/js/add-city.js'></script>
