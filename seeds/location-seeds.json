@@ -1,19 +1,23 @@
 [
   {
     "id": 1,
-    "location_name": "Charlotte"
+    "location_name": "Charlotte",
+    "full_name" : "Charlotte, North Carolina"
   },
   {
     "id": 2,
-    "location_name": "Asheville"
+    "location_name": "Asheville",
+    "full_name" : "Asheville, North Carolina"
   },
   {
     "id": 3,
-    "location_name": "France"
+    "location_name": "Paris",
+    "full_name" : "Paris, France"
   },
   {
     "id": 4,
-    "location_name": "Ecuador"
+    "location_name": "Banos",
+    "full_name" : "Baños, Ecuador"
   }
 ]
 
