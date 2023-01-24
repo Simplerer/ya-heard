@@ -178,6 +178,7 @@ router.get('/add', (req, res) => {
   }
   res.render('addlocation');
 });
+
 //temporary route to try add review until we have the real recomendation route
 router.get('/recommendation', (req, res) => {
 
