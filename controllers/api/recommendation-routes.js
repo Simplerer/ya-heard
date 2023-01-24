@@ -146,6 +146,14 @@ router.get('/', async (req, res) => {
         res.status(500).json(err)
     }
   })
-  
+
+  router.post('/location', async (req, res) => {
+    try {
+      const locationData = await Location.create(req.body);
+    res.json(locationData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;
