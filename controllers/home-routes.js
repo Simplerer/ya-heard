@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
     const imageList = [];
     imageList.push("locations/charlotte.png");
     imageList.push("locations/asheville.png");
-    imageList.push("locations/ecuador.png");
     imageList.push("locations/france.png");
+    imageList.push("locations/ecuador.png");
     res.render('location', { locations, imageList });
   } catch (err) {
     res.status(500).json(err);
@@ -109,6 +109,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
          },
         include: [{ 
           model: Recommendation,
+          include: [User],
           where: {
             location_id: {
               [Op.col]: 'location.id'
