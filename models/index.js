@@ -12,39 +12,35 @@ Recommendation.belongsTo(User, {
 });
 
 User.hasMany(Recommendation, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 Category.hasMany(Recommendation, {
-  foreignKey: 'category_id'
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE',
 });
 
 Location.hasMany(Recommendation, {
-  foreignKey: 'location_id'
+  foreignKey: 'location_id',
+  onDelete: 'CASCADE',
 });
 
-// Recommendation.belongsTo(Category, {
-//   through: {
-//     model: LocationCategory,
-//   }
-// });
 
 Location.belongsToMany(Category, {
   through: {
-    model: LocationCategory
+    model: LocationCategory, 
+    unique: false,
   }
 })
 
 Category.belongsToMany(Location, {
   through: {
-    model: LocationCategory
+    model: LocationCategory, 
+    unique: false,
   }
 })
 
-
-// LocationCategory.belongsTo(Location);
-// LocationCategory.belongsTo(Category);
-// LocationCategory.belongsTo(Recommendation);
 
 
 module.exports = {

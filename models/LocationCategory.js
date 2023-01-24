@@ -16,6 +16,7 @@ LocationCategory.init(
             references: {
               model: 'location',
               key: 'id',
+              unique: false,
             },
           },
           category_id: {
@@ -23,6 +24,7 @@ LocationCategory.init(
             references: {
               model: 'category',
               key: 'id',
+              unique: false,
             },
           }
 

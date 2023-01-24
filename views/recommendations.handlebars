@@ -1,31 +1,42 @@
+<script>
+  const createMarker = (id, lat, lon) => {
+    let map = L.map("map" + id).setView([lat, lon], 10);
+    console.log(map);
+    let marker = L.marker([lat, lon]).addTo(map);
+    console.log(marker);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  }
+</script>
 <section class="container-fluid content">
   <section class="row justify-content-md-center recs">
-  <h1 id="prompt">{{location.categories.[0].category_name}} Recommendations in:</h1>
-  <h2 id="locname">{{location.full_name}}</h2>
-{{#each location.categories.[0].recommendations }}
-<div class="col pt-4">
-<section class="card rec">
-  <header id="rectitle">{{title}}</header>
-  <div class="card-body">
-  {{#if address}}
-  <p><span class="first" style="color: #584f3e;">address:</span> {{address}}</p>
-  {{/if}}
-  <p>{{comment}}</p>
-  <p><span class="first" style="color: #584f3e;">Recommended by:</span> {{user.username}}</p>
-{{#if lat}}
-<div id="map"></div>
-<script>
-  let map = L.map("map").setView([{{lat}}, {{long}}], 10);
-  let marker = L.marker([{{lat}}, {{long}}]).addTo(map);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-</script>
-{{/if}}    
-  </div>
-</section>
-</div>
-{{/each}}
-</section>
+    <h1 id="prompt">{{location.categories.[0].category_name}} Recommendations in:</h1>
+    <h2 id="locname">{{location.full_name}}</h2>
+    {{#each location.categories.[0].recommendations }}
+      <div class="col pt-4">
+        <section class="card rec">
+          <header id="rectitle">
+            <p id="rec-title-txt">{{title}}</p>
+            </header>
+          <div class="card-body d-flex flex-column recbody">
+            <div class="card-p-continer">
+            {{#if address}}
+              <p><span class="first" style="color: #584f3e;">Address:</span> {{address}}</p>
+            {{/if}}
+            <p id="comment-txt">‟{{comment}}‟</p>
+            <p><span class="first" style="color: #584f3e;">Recommended by:</span> {{user.username}}</p>
+            </div>
+            {{#if lat}}
+              <div id="map{{id}}"></div>
+              <script>
+                createMarker({{id}}, {{lat}}, {{long}});
+              </script>
+            {{/if}}
+          </div>
+        </section>
+      </div>
+    {{/each}}
+  </section>
 </section>
