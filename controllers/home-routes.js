@@ -3,8 +3,9 @@ const express = require('express');
 const { Op } = require('sequelize');
 const { Category, Location, LocationCategory, Recommendation, User } = require('../models/');
 
-// get City Page - main
 router.use(express.static("images"));
+
+// get City Page - main
 
 router.get('/', async (req, res) => {
   try {
@@ -14,8 +15,8 @@ router.get('/', async (req, res) => {
     const imageList = [];
     imageList.push("locations/charlotte.png");
     imageList.push("locations/asheville.png");
-    imageList.push("locations/ecuador.png");
     imageList.push("locations/france.png");
+    imageList.push("locations/ecuador.png");
     res.render('location', { locations, imageList });
   } catch (err) {
     res.status(500).json(err);
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 
 // get categories by city
 
-router.get('/location/charlotte', async (req, res) => {
+router.get('/location/Charlotte', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
@@ -35,13 +36,13 @@ router.get('/location/charlotte', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category-charlotte', { categories, imageList });
+    res.render('category-Charlotte', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/location/asheville', async (req, res) => {
+router.get('/location/Asheville', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
@@ -51,13 +52,13 @@ router.get('/location/asheville', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category-asheville', { categories, imageList });
+    res.render('category-Asheville', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/location/france', async (req, res) => {
+router.get('/location/France', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
@@ -67,13 +68,13 @@ router.get('/location/france', async (req, res) => {
     imageList.push("categories/foodandbev.png");
     imageList.push("categories/services.png");
     imageList.push("categories/shopping.png");
-    res.render('category-france', { categories, imageList });
+    res.render('category-France', { categories, imageList });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/location/ecuador', async (req, res) => {
+router.get('/location/Ecuador', async (req, res) => {
   try {
     const categoryData = await Category.findAll();
     const categories = categoryData.map((category) =>
@@ -88,6 +89,8 @@ router.get('/location/ecuador', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Recomenndation for a specific category/location combo
 
 router.get('/location/:city/category/:category', async (req, res) => {
   try{
@@ -106,6 +109,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
          },
         include: [{ 
           model: Recommendation,
+          include: [User],
           where: {
             location_id: {
               [Op.col]: 'location.id'
@@ -145,6 +149,7 @@ router.get('/location/:city/category/:category', async (req, res) => {
 //   }
 // })
 
+
  // This is a login and signup page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -155,22 +160,28 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// add a review, links from anywhere
 router.get('/addreview', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
     return;
   }
 
   res.render('addreview');
 });
 
+// add a city request page
 router.get('/add', (req, res) => {
-  // if not logged in should redirect to login, cant request add without signing in
   if (!req.session.loggedIn) {
     res.redirect('/login');
     return;
   }
-  // whatever the name of the view will be
   res.render('addlocation');
 });
+//temporary route to try add review until we have the real recomendation route
+router.get('/recommendation', (req, res) => {
+
+  res.render('recommendations');
+});
+
 module.exports = router;
