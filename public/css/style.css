@@ -16,7 +16,7 @@
   }
 
   .left-nav{
-    flex:1 1 200px;
+    flex:1 1 120px;
   }
 
   .nav-link{
@@ -63,6 +63,7 @@
 
 .content {
   z-index: 2;
+  margin-top: 100px;
 }
 
 .leaflet-container {
@@ -154,7 +155,7 @@
  }
  
  #logo{
-  font-size: clamp(1.7rem, 10vw, 2.7rem);
+  font-size: clamp(1.7rem, 7vw, 2.7rem);
   font-weight: bolder;
   border: 2px solid #584f3e;
   padding: 14px;
@@ -285,3 +286,51 @@
  #titcity {
   filter: drop-shadow(0.35rem 0.35rem 0.4rem #27c554);
  }
+
+ @media (max-width: 640px) {
+  .container {
+    text-align: center;
+  }
+
+  #topnav {
+    flex-direction: column;
+    max-height: fit-content;
+    margin-bottom: 40px;
+  }
+
+  #right-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .linkbtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    flex-direction: column;
+  }
+
+  .locations {
+    margin-top: 450px;
+  }
+
+  #prompt {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  #logo {
+    margin: 3px;
+  }
+
+  .logcard{
+    margin-top: 400px;
+  }
+
+  .recform{
+    margin-top: 400px;
+  }
+
+}
