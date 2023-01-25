@@ -15,16 +15,13 @@ const init = async () => {
     returning: true,
   });
   const locations= await Location.bulkCreate(locationData, {
-    // individualHooks: true,
-    // returning: true,
+  
   });
   const categories = await Category.bulkCreate(categoryData, {
-    // individualHooks: true,
-    // returning: true,
+   
   });
   const recommendations = await Recommendation.bulkCreate(recommendationData, {
-    // individualHooks: true,
-    // returning: true,
+    
   });  
   const locationCategories = await LocationCategory.bulkCreate(locationCategory);
  

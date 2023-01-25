@@ -16,38 +16,23 @@
 </head>
 
 <body>
- {{!-- <nav>
-  <h2>Login</h2>
-  <p>
-    Sign In to your account <a href="/login">Login</a>.
-   
-  </p>
- <h2>New Recommendation</h2>
-  <p>
-    Are you enjoying goods or services from a business in your local community and think other's should
-    know about it? Visit  <a href="/New Recommendations">New Recommendation</a> to help bring more exposure and support.
-    We are always adding new data!
-	
-  </p>
- <h2>About this site
-  <p>
-    To learn more about us, please visit <a href="/about">About Us</a>.  
-    
-  </p>
-</nav> --}}
+ 
 <div class="container">
-  {{!-- <div class="row mb-4">
-    <div class="col"> --}}
+ 
 <nav class= "navbar" id="topnav">
+        <div class="left-nav">
          <a id="logo" class="nav-link" href="/">Ya Heard⁈</a>
-         <a class="nav-link linkbtn" href="/login">Login</a>
-         <a class="nav-link linkbtn" href="/">Logout</a>
-         <a class="nav-link linkbtn" href="/">Home</a>
-         <a class="nav-link linkbtn" href="/addreview">+ Recommendation</a>
-         <a class="nav-link linkbtn" href="/add">+ City</a>
+         </div>
+         <div class="right-nav">
+         <a class="nav-link linkbtn" id="cities" href="/">Cities</a>
+         <a class="nav-link linkbtn" href="/addreview">+ New Recommendation</a>
+         <a class="nav-link linkbtn" href="/add">+ New City</a>
+         <a class="nav-link linkbtn" id="logsign" href="/login">Login/SignUp</a>
+         <a class="nav-link linkbtn" id="logout" href="/">Logout</a>
+         </div>
 </nav>
-  {{!-- </div>
-  </div> --}}
+
+  
   <main>
     {{{body}}}
   </main>
