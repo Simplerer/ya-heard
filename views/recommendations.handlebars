@@ -14,6 +14,16 @@
   <section class="row justify-content-md-center recs">
     <h1 id="prompt">{{location.categories.[0].category_name}} Recommendations in:</h1>
     <h2 id="locname">{{location.full_name}}</h2>
+    {{#if !location.categories.[0].recommendations}}
+     </section>
+  <div class="row justify-content-md-center norecs">
+    <div class="col col-12 text-center align-self-center">
+    <article>
+      Unfortunately we dont have any {{location.categories.[0].category_name}} recommendations to share for {{location.full_name}} consider <a id="formlink" href="/addreview">adding one</a>!
+    </article>
+  </div>
+  </div>
+</section>
     {{#each location.categories.[0].recommendations }}
       <div class="col pt-4">
         <section class="card rec">
