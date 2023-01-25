@@ -46,7 +46,20 @@
     background-image: linear-gradient(#D2FE95,#E3D9C9);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: clamp(1rem, 8vw, 1.5rem);
+    border-bottom: 2px #a3eccc dotted;
  }
+
+ #cities {
+  padding-right: 20px;
+  padding-left: 20px;
+  color:#a3eccc
+ }
+
+ #logsign, #logout {
+  color:#ede2d2;
+  background-color: #9e927c;
+ }
+ 
 
 .content {
   z-index: 2;
@@ -63,7 +76,7 @@
  #prompt {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 75px;
   background-color: #ede2d2;
   border-radius: 20px;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
@@ -133,6 +146,8 @@
   background-color: #7b7365;
   color: #E3D9C9;
   padding: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 14px;
   box-shadow: 3px 3px #19a96b, -.2em 0 .4em olive;
   font-size: clamp(.8rem, 10vw, 1.2rem);
@@ -147,6 +162,7 @@
   border-radius: 50%;
   background-image: linear-gradient(0deg, #E3D9C9, olive 40%, #E3D9C9);
   filter: drop-shadow(0 0 0.75rem #27c554);
+  min-width: 285px;
  }
 
  .first{
@@ -241,7 +257,7 @@
   border-radius: 100px;
   padding: 10px;
   text-decoration: none;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
    font-weight: bolder;
  }
 

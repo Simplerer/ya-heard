@@ -11,12 +11,6 @@ router.get('/', async (req, res) => {
         include: [{ 
             model: User,
             attributes: ['username'] }, 
-            // { 
-            //     model: Location,
-            //     attributes: ['location_name'] },
-            // { 
-            //     model: Category,
-            //     attributes: ['category_name'] }
               ]
       });
       res.json(recomData)
@@ -118,15 +112,6 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
-  // router.post('/location', async (req, res) => {
-  //   try {
-  //     const locationData = await Location.create(req.body);
-  //   res.json(locationData);
-  //   } catch (err) {
-  //     res.status(500).json(err);
-  //   }
-  // });
 
     router.put('/:id', async (req, res) => {
     try {
