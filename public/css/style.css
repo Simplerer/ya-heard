@@ -10,9 +10,8 @@
   body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #E3D9C9;
-    margin:0px;
-    margin-top:60px;
-    padding: 0px;
+    /* margin: 10px; */
+    padding: 10px;
   }
 
   .left-nav{
@@ -35,7 +34,6 @@
   #topnav {
     width: 100%;
     display: flex;
-    position: fixed;
     top: 0;
     left: 0;
     margin-bottom: 10px;
@@ -70,8 +68,13 @@
   z-index: 3;
 }
 
- .locations, .categories {
-  margin-top: 300px;
+.categories {
+  margin-top: 100px;  
+ }
+
+ #websitelink {
+  text-decoration: none;
+  color:#165836
  }
 
  #prompt {
@@ -81,11 +84,11 @@
   background-color: #ede2d2;
   border-radius: 20px;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
-  font-size: clamp(1.7rem, 10vw, 2.5rem);
+  font-size: clamp(1.2rem, 10vw, 2.5rem);
  }
 
  .recs {
-  margin-top: 300px;
+  margin-top: 100px;
  }
 
  .rec {
@@ -187,7 +190,7 @@
  .logcard {
   padding: 30px;
   margin: 50px;
-  margin-top: 300px;
+  margin-top: 100ßpx;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
   min-width: 450px;
  }
@@ -291,6 +294,9 @@
   .container {
     text-align: center;
   }
+  .recs {
+    margin-top: 200px;
+   }
 
   #topnav {
     flex-direction: column;
@@ -298,6 +304,10 @@
     margin-bottom: 40px;
   }
 
+  #prompt {
+    min-width: 465px !important;
+  }
+  
   #right-nav {
     display: flex;
     flex-direction: column;
@@ -308,12 +318,21 @@
     margin-bottom: 10px;
   }
 
+  body {
+    margin:0;
+    padding:0;
+  }
+  
+  .categories {
+    margin-top: 300px;
+   }
+
   nav a {
     flex-direction: column;
   }
 
   .locations {
-    margin-top: 450px;
+    margin-top: 100px;
   }
 
   #prompt {

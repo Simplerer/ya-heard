@@ -25,6 +25,9 @@
             {{#if address}}
               <p><span class="first" style="color: #584f3e;">Address:</span> {{address}}</p>
             {{/if}}
+            {{#if website}}
+            <p id="website"><a id="websitelink" href="{{website}}"><span class="first" style="color: #584f3e;">Website:</span> {{website}}</a>
+            {{/if}}
             <p id="comment-txt">‟{{comment}}‟</p>
             <p><span class="first" style="color: #584f3e;">Recommended by:</span> {{user.username}}</p>
             </div>
