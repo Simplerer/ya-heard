@@ -27,7 +27,7 @@ async function newFormHandler(event) {
   });
   //if the recommendation is added
   if (response.ok) {
-    document.location.replace('/recommendation');
+    document.location.replace('/');
   } else {
     alert('Failed to add recommendation');
   }
