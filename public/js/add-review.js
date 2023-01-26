@@ -7,7 +7,6 @@ async function newFormHandler(event) {
   const website = document.querySelector('#website').value;
   const location_id = document.querySelector('#location_id').value;
 
-
   // Send fetch request to add a new review
 
   const response = await fetch(`/api/recommendations`, {

@@ -35,7 +35,7 @@ Recommendation.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len:[10,500],
+                len:[1,500],
             }
         },
         user_id: {
