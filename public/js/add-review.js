@@ -13,12 +13,12 @@ async function newFormHandler(event) {
   const response = await fetch(`/api/recommendations`, {
     method: 'POST',
     body: JSON.stringify({
-      title,
-      comment,
-      website,
-      address,
-      category_id,
-      location_id,
+      title: title,
+      comment: comment,
+      website: website,
+      address: address,
+      category_id: category_id,
+      location_id: location_id,
     }),
     headers: {
       'Content-Type': 'application/json',

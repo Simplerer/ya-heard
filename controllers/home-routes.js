@@ -63,27 +63,6 @@ router.get('/location/:city/category/:category', async (req, res) => {
   }
 });
 
-// get all recommendations for a location
-
-// router.get('/recommendations/:id', async (req, res) => {
-//   try{
-//     const recomData = await Recommendation.findAll({
-//         where: {
-//             location_id: req.params.id
-//         },
-//       include: [{ 
-//           model: User,
-//           attributes: ['username'] }]
-//     });
-//      const recommendations = recomData.map((recommendation) =>
-//      recommendation.get({ plain: true }));
-//     res.render('recommendation', {recommendations})
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// })
-
-
  // This is a login and signup page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
