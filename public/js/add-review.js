@@ -7,18 +7,17 @@ async function newFormHandler(event) {
   const website = document.querySelector('#website').value;
   const location_id = document.querySelector('#location_id').value;
 
-
   // Send fetch request to add a new review
 
   const response = await fetch(`/api/recommendations`, {
     method: 'POST',
     body: JSON.stringify({
-      title,
-      comment,
-      website,
-      address,
-      category_id,
-      location_id,
+      title: title,
+      comment: comment,
+      website: website,
+      address: address,
+      category_id: category_id,
+      location_id: location_id,
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -27,7 +26,7 @@ async function newFormHandler(event) {
   });
   //if the recommendation is added
   if (response.ok) {
-    document.location.replace('/recommendation');
+    document.location.replace('/');
   } else {
     alert('Failed to add recommendation');
   }
