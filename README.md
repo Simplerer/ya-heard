@@ -12,7 +12,7 @@
     
   ## Usage
   
-  To use this application, one needs to just navigate the home site <enter site here> and peruse away. When landing on the home page you will be presented with choices cities currently available. Select one and then find which of categories suits your needs; Arts and Entertainment, Food and Beverage, Shopping and Retail, and Services. Once you select an option you will be taken to a display of all current recommendations. You may peruse through untill your hearts content and if you feel inspired, just sign up and you can share your own local tips.
+  To use this application, one needs to just navigate the home site <enter site here> and peruse away. When landing on the home page you will be presented with choices cities currently available. Select one and then find which of categories suits your needs; Arts and Entertainment, Food and Beverage, Shopping and Retail, and Services. Once you select an option you will be taken to a display of all current recommendations. You may search through the site to your hearts content and if you feel inspired, just sign up and you can share your own local tips.
 
   ## Link
 
